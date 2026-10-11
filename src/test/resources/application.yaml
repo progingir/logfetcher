@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+logfetcher:
+  trust-all-ssl: true
+  grafana:
+    enabled: false
+    base-url: "https://test-grafana"
+    alerts-endpoint: "/api/alerts"
+    critical-severities: ["critical"]
+    poll-interval-ms: 60000
+    timeout-seconds: 15
+  tengri:
+    enabled: false
+    endpoint: "https://test-tengri"
+    project-id: "CI03261475"
+    journal-name: "pprb_sbbol"
+    index-id: "144"
+    query-format: "%s"
+    from-minutes-offset: 5
+    to-minutes-offset: 2
+    output-dir: "./fetched_logs"
+    timeout-seconds: 30

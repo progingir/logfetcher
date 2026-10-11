@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: logfetcher
+
+server:
+  port: ${SERVER_PORT}
+
+logging:
+  level:
+    com.sber.logfetcher: DEBUG
+    org.springframework: INFO
+
+logfetcher:
+  trust-all-ssl: ${LOGFETCHER_TRUST_ALL_SSL}
+
+  grafana:
+    enabled: ${GRAFANA_ENABLED}
+    base-url: ${GRAFANA_BASE_URL}
+    alerts-endpoint: ${GRAFANA_ALERTS_ENDPOINT}
+    token: ${GRAFANA_TOKEN:}
+    cookie: ${GRAFANA_COOKIE:}
+    critical-severities: ${GRAFANA_CRITICAL_SEVERITIES}
+    poll-interval-ms: ${GRAFANA_POLL_INTERVAL_MS}
+    timeout-seconds: ${GRAFANA_TIMEOUT_SECONDS}
+
+  tengri:
+    enabled: ${TENGRI_ENABLED}
+    endpoint: ${TENGRI_ENDPOINT}
+    cookie: ${TENGRI_COOKIE:}
+    client-api-token: ${TENGRI_CLIENT_API_TOKEN:}
+    project-id: ${TENGRI_PROJECT_ID}
+    journal-name: ${TENGRI_JOURNAL_NAME}
+    index-id: ${TENGRI_INDEX_ID}
+    query-format: ${TENGRI_QUERY_FORMAT}
+    from-minutes-offset: ${TENGRI_FROM_MINUTES_OFFSET}
+    to-minutes-offset: ${TENGRI_TO_MINUTES_OFFSET}
+    output-dir: ${TENGRI_OUTPUT_DIR}
+    timeout-seconds: ${TENGRI_TIMEOUT_SECONDS}
